@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 
 
-from fractions import gcd
+from math import gcd
 from sys import argv
 
 
