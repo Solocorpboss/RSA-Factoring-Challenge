@@ -7,7 +7,11 @@ from math import sqrt
 def factor():
     with open(argv[1]) as f:
         for line in f:
-            num = int(line)
+            line = line.strip()
+            try:
+                num = int(line)
+            except ValueError:
+                continue
             if num % 2 == 0:
                 p = 2
                 q = num // 2
