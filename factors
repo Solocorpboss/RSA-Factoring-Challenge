@@ -1,18 +1,10 @@
 #!/usr/bin/python3
 
-import signal
 from sys import argv
 from math import sqrt
 
 
-def handler(signum, frame):
-    print("Error: Time limit exceeded")
-    exit(1)
-
-
 def factor():
-    signal.signal(signal.SIGALRM, handler)
-    signal.alarm(5)
     with open(argv[1]) as f:
         for line in f:
             line = line.strip()
@@ -36,7 +28,6 @@ def factor():
                     p = num
                     q = 1
             print("{} = {} * {}".format(num, p, q))
-    signal.alarm(0)
 
 
 factor()
